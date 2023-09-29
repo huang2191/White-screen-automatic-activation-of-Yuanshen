@@ -1,10 +1,10 @@
-import time
-import os
-import pyautogui
 import subprocess
-from PIL import ImageGrab
-import numpy as np
+import time
+
 import cv2
+import numpy as np
+import pyautogui
+from PIL import ImageGrab
 
 
 def new_play_video():
@@ -41,7 +41,7 @@ def detect_white_screen():
 # 原神启动函数
 def yuanshen_start(start_model, yuanshen_lnk):
     if start_model == 1:
-        os.statvfs(r'yuanshen_lnk')
+        subprocess.run(yuanshen_lnk)
     else:
         new_play_video()
 
@@ -70,6 +70,7 @@ if start_model == 1:
     yuanshen_lnk = input("请原神输入lnk")
 else:
     pass
+
 
 # 是否有白屏（快速）
 while True:
